@@ -7,6 +7,6 @@ var Rectangle = function(x, y, width, height) {
 
 Rectangle.prototype.constructor = Rectangle;
 
-//TODO: Contains/intersects/etc.
+//TODO: this is going to get removed from minimath
 
 module.exports = Rectangle;

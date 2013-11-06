@@ -20,11 +20,16 @@ module.exports = {
         return t*t*(3 - 2*t);
     },
     
-    /** pythagorean */
-    distance: function(x1, y1, x2, y2) {
+    /** pythagorean, squared */
+    distanceSq: function(x1, y1, x2, y2) {
         var dx = x2 - x1;
         var dy = y2 - y1;
-        return Math.sqrt(dx * dx + dy * dy);
+        return dx * dx + dy * dy;
+    },
+
+    /** pythagorean */
+    distance: function(x1, y1, x2, y2) {
+        return Math.sqrt( this.distanceSq(x1, y1, x2, y2) );
     },
 
     /** Utility function to shuffle an array in place 
