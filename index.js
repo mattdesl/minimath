@@ -1,3 +1,11 @@
+var distanceSq = function(x1, y1, x2, y2) {
+    var dx = x2 - x1;
+    var dy = y2 - y1;
+    return dx * dx + dy * dy;
+};
+
+
+
 module.exports = {
 	
 	/**
@@ -21,15 +29,11 @@ module.exports = {
     },
     
     /** pythagorean, squared */
-    distanceSq: function(x1, y1, x2, y2) {
-        var dx = x2 - x1;
-        var dy = y2 - y1;
-        return dx * dx + dy * dy;
-    },
+    distanceSq: distanceSq,
 
     /** pythagorean */
     distance: function(x1, y1, x2, y2) {
-        return Math.sqrt( this.distanceSq(x1, y1, x2, y2) );
+        return Math.sqrt( distanceSq(x1, y1, x2, y2) );
     },
 
     /** Utility function to shuffle an array in place 
